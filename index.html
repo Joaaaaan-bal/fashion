@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_drop_down" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Home | Bold & Fashionable Fits</title>
+    <link rel="icon" href="logo.jpg" type="image/png">
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('landigpage.jpg');
+            background-size: cover;
+            width: 100%;
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #FFFFFF;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 20px;
+            border-bottom: 2px solid #E5E5E5;
+            position: sticky;  
+            top: 0;           
+            z-index: 1000; 
+            border-bottom: solid black;
+            font-family: 'Georgia', serif;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1.2rem;
+            display: inline-block;
+            border-radius: 10px;
+            margin: 5px;
+            transition: background-color 0.3s, color 0.3s, border-bottom 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #000000;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.active::after {
+            width: 100%; 
+        }
+
+        nav .material-symbols-outlined {
+            margin-left: 8px;
+            vertical-align: middle;
+            font-size: 1.2rem;
+        }
+
+        nav li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #F7F3F5;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+        }
+
+        .dropdown li {
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown a {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #000000;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #F7F3F5;
+            color: black;
+        }
+        nav a:hover {
+            background-color: transparent; 
+            color: #000000; 
+            border-bottom: none; 
+            text-decoration: none;
+        }
+        
+         h1 {
+            font-size: 2rem;
+            line-height: 1.6;
+            font-family: 'Georgia', serif;
+            color: #fff;
+        }
+
+        
+
+        section {
+            margin-top: 80px;
+            margin-bottom: 30px;
+            background-color: rgba(73, 70, 72, 0.7);
+            padding: 20px;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(5px); 
+            -webkit-backdrop-filter: blur(10px); 
+            border-radius: 10px;
+        }
+        .post {
+        background-color: #E5E5E5;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 500px;
+        margin-bottom: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        
+    }
+    
+    .post img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+    }
+    img:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
+            filter: grayscale(100%) brightness(90%);
+        }
+
+    .view-collection {
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+        margin-bottom: 10px;
+    }
+
+    .view-collection:hover {
+        background-color: #fff;
+        color: #000;
+       
+    }
+    .fashion-img {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .post.visible .fashion-img {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .view-collection {
+        background-color: #000000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    .view-collection:hover {
+        background-color: #ffffff;
+        color: #000000;
+    }
+    #fashionSection {
+        background: linear-gradient(45deg, #8f8c8c, #4e4b4b);
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .view-collection .arrow {
+        font-size: 1.4rem;
+        margin-left: 10px;
+    }
+    .p-3 {
+        padding: 20px;
+    }
+
+    h3 {
+        font-family: 'Georgia', serif;
+        color: #333;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+        
+    </style>
+</head>
+<body>
+
+    <header class="text-center">
+        <h1>BOLD & FASHIONABLE FITS</h1>
+    </header>
+    <nav>
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html" id="homeLink" class="active" >Home</a></li>
+            <li>
+                <a href="" id="fashionLink">Collection<span class="material-symbols-outlined">arrow_drop_down</span></a>
+                <ul class="dropdown">
+                    <li><a href="menscollection.html">Men</a></li>
+                    <li><a href="womencollection.html">Women</a></li>
+                    <li><a href="lgbtqcollection.html">LGBTQ+</a></li>
+                </ul>
+            </li>
+            <li><a href="style.html" id="styleLink">Style Tips</a></li>
+            <li><a href="about.html" id="aboutLink">About</a></li>
+            <li><a href="contact.html" id="contactLink">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+    <section class="container mt-4" style="margin-bottom: 100px;">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+                <h1>Step into a world of bold fashion and timeless style—where confidence meets creativity.</h1>
+                
+            </div>
+            <div class="col-md-6">
+                <img src="fashion.jpg" alt="Fashion Style" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </section>
+    <section class="container mt-4" style="background-color: #8f8c8c; padding: 50px; border-radius: 15px;" id="fashionSection">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="post">
+                    <div class="img-container">
+                        <img src="women.jpg" alt="Fashion Image 1" class="fashion-img">
+                    </div>
+                    <div class="p-3 text-center">
+                        <h3>WOMEN'S COLLECTION</h3>
+                        <p>Step into a world where style has no limits. Your perfect fit is waiting!</p>
+                        <a href="womencollection.html">
+                            <button class="view-collection">View Collection <span class="arrow">→</span></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="post">
+                    <div class="img-container">
+                        <img src="men.jpg" alt="Fashion Image 2" class="fashion-img">
+                    </div>
+                    <div class="p-3 text-center">
+                        <h3>MEN'S COLLECTION</h3>
+                        <p>Comfort and coolness, all in one.</p>
+                        <a href="menscollection.html">
+                            <button class="view-collection">View Collection <span class="arrow">→</span></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="post">
+                    <div class="img-container">
+                        <img src="lgbtq.jpg" alt="Fashion Image 3" class="fashion-img">
+                    </div>
+                    <div class="p-3 text-center">
+                        <h3>LGBTQ+ COLLECTION</h3>
+                        <p>Wear your pride, own your style.</p>
+                        <a href="lgbtqcollection.html">
+                            <button class="view-collection">View Collection <span class="arrow">→</span></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0g0z7eJld54A9faun6dRzFqkLti/TlLwYhFxGAdo6NlZQYXxM" crossorigin="anonymous"></script>
+
+    <script>
+        const section = document.getElementById('fashionSection');
+        const posts = section.querySelectorAll('.post');
+    
+        const observerOptions = {
+            root: null,
+            rootMargin: '5px',
+            threshold: 0.5
+        };
+    
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+    
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+        posts.forEach(post => {
+            observer.observe(post);
+        });
+    </script>
+</body>
+</html>

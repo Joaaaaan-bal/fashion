@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_drop_down" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Men's Collection | Bold & Fashionable Fits</title>
+    <link rel="icon" href="logo.jpg" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #FFFFFF;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 20px;
+            border-bottom: 2px solid #E5E5E5;
+            position: sticky;  
+            top: 0;           
+            z-index: 1000; 
+            border-bottom: solid black;
+            font-family: 'Georgia', serif;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1.2rem;
+            display: inline-block;
+            border-radius: 10px;
+            margin: 5px;
+            transition: background-color 0.3s, color 0.3s, border-bottom 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #000000;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.active::after {
+            width: 100%; 
+        }
+
+        nav .material-symbols-outlined {
+            margin-left: 8px;
+            vertical-align: middle;
+            font-size: 1.2rem;
+        }
+
+        nav li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #F7F3F5;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+        }
+
+        .dropdown li {
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown a {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #000000;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #F7F3F5;
+            color: black;
+        }
+        nav a:hover {
+            background-color: transparent; 
+            color: #000000; 
+            border-bottom: none; 
+            text-decoration: none;
+        }
+        img {
+            height: 200px;
+            z-index: 1; 
+            transition: box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out;
+        }
+        img:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
+            filter: grayscale(100%) brightness(90%);
+        }
+        .hover-message {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .img-hover-container:hover ~ .hover-message {
+            opacity: 1;
+            visibility: visible;
+        }
+        .img-hover-container:hover {
+            cursor: pointer;
+        }
+        #mensCollectionHeading {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 30px;
+        }
+        .hover-message {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            font-size: 1.2rem;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #mensCollectionHeading:hover .hover-message {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BOLD & FASHIONABLE FITS</h1>
+    </header>
+    <nav>
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html" id="homeLink">Home</a></li>
+            <li>
+                <a href="" id="fashionLink" class="active">Collection<span class="material-symbols-outlined">arrow_drop_down</span></a>
+                <ul class="dropdown">
+                    <li><a href="menscollection.html" class="active">Men</a></li>
+                    <li><a href="womencollection.html">Women</a></li>
+                    <li><a href="lgbtqcollection.html">LGBTQ+</a></li>
+                </ul>
+            </li>
+            <li><a href="style.html" id="styleLink">Style Tips</a></li>
+            <li><a href="about.html" id="aboutLink">About</a></li>
+            <li><a href="contact.html" id="contactLink">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container mt-3">
+            <div class="row align-items-start">
+                <div class="col-md-4 text-container">
+                    <h2 class="font-weight-bold" style="font-family: 'Georgia', serif; padding-top:30px" id="mensCollectionHeading">
+                        Men's Collection
+                    </h2>
+                    <p class="hover-message" style="font-size: 1.2rem;"></p>
+                </div>
+                <div class="col-md-8">
+                    <div class="row" style="background-color: #f9f9f9; border-radius: 10px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                        <div class="col-md-4 mb-4">
+                            <div class="position-relative img-hover-container"  data-hover-text="Simple Outfit: A simple outfit is characterized by minimalistic clothing that focuses on clean lines, neutral colors, and basic styles. It avoids excessive decoration or complex layering, offering a straightforward and effortless look.">
+                                <img src="men1.jpg" alt="Men's Outfit 1" class="img-fluid rounded img-hover" style="width: 100%; object-fit: cover; border-radius: 10px; height: 200px;">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="position-relative img-hover-container" data-hover-text="Casual Look: A casual look is relaxed and comfortable, often featuring jeans, t-shirts, sneakers, or other easy-to-wear pieces that are suitable for everyday activities. It balances style and comfort, ideal for informal settings.">
+                                <img src="men2.jpg" alt="Men's Outfit 2" class="img-fluid rounded" style="width: 100%; object-fit: cover; border-radius: 10px; height: 200px;">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="position-relative img-hover-container" data-hover-text="Streetwear: Streetwear combines elements of urban culture, skate, and hip-hop fashion, often incorporating graphic tees, hoodies, oversized fits, and sneakers. It has a strong emphasis on individuality and youth culture, with many items featuring bold logos or messages.">
+                                <img src="men3.jpg" alt="Men's Outfit 3" class="img-fluid rounded" style="width: 100%; object-fit: cover; border-radius: 10px; height: 200px;">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="position-relative img-hover-container" data-hover-text="Retro Style: Retro style involves clothing that is inspired by past decades, typically the 60s, 70s, 80s, or 90s, often reviving popular trends and designs from those eras. It includes vintage prints, colors, and silhouettes that evoke nostalgia for older styles.">
+                                <img src="men4.jpg" alt="Men's Outfit 4" class="img-fluid rounded" style="width: 100%; object-fit: cover; border-radius: 10px; height: 200px;">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="position-relative img-hover-container" data-hover-text="Vintage Style: Vintage style is the use of clothing and accessories that are at least 20 to 30 years old, emphasizing timeless, high-quality items from past decades. It often involves unique or one-of-a-kind pieces that reflect the fashion of earlier times.">
+                                <img src="men5.jpg" alt="Men's Outfit 5" class="img-fluid rounded" style="width: 100%; object-fit: cover; border-radius: 10px; height: 200px;">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="position-relative img-hover-container" data-hover-text="Modern Outfit: A modern outfit incorporates current fashion trends, often favoring sleek, minimalist, and tailored pieces that reflect contemporary aesthetics. It focuses on clean, polished looks and new-age designs suited for today’s fashion landscape.">
+                                <img src="men6.jpg" alt="Men's Outfit 6" class="img-fluid rounded" style="width: 100%; object-fit: cover; border-radius: 10px; height: 200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+       
+        const imgContainers = document.querySelectorAll('.img-hover-container');
+        const hoverMessage = document.querySelector('.hover-message');
+
+        imgContainers.forEach((container) => {
+            container.addEventListener('mouseenter', () => {
+                const hoverText = container.getAttribute('data-hover-text');
+                hoverMessage.textContent = hoverText; 
+                hoverMessage.style.opacity = '1'; 
+                hoverMessage.style.visibility = 'visible';
+            });
+
+            container.addEventListener('mouseleave', () => {
+                hoverMessage.style.opacity = '0'; 
+                hoverMessage.style.visibility = 'hidden';
+            });
+        });
+        $(document).ready(function() {
+        // Listen for clicks on images and open modal with corresponding images
+        $('.img-hover-container').on('click', function() {
+            var images = $(this).data('images'); // Get the image array
+            var modalImages = $('#modalImages'); // Select the modal container
+
+            // Update the modal images
+            modalImages.empty(); // Clear current images in modal
+            images.forEach(function(imgSrc) {
+                modalImages.append('<img src="' + imgSrc + '" class="img-fluid mx-2" style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px;">');
+            });
+        });
+    });
+    </script>
+</body>
+</html>
